@@ -93,7 +93,7 @@
 <div class="section">
     <h2>Coin Flip Simulator</h2>
 
-    <img id="coinImage" src ="/assets/img/heads.png" width="150" alt="Coin Image">
+    <img id="coinImage" src ="assets/img/heads.png" width="150" alt="Coin Image">
 
     <p id="coinText">Click flip to start!</p>
 
@@ -297,10 +297,10 @@ function flipCoin() {
     total++;
     if (result === "Heads") {
         heads++;
-        document.getElementById("coinImage").src = "/assets/img/heads.png";
+        document.getElementById("coinImage").src = "assets/img/heads.png";
     } else{
         tails++;
-        document.getElementById("coinImage").src = "/assets/img/tails.png";
+        document.getElementById("coinImage").src = "assets/img/tails.png";
     }
     document.getElementById("coinText").innerHTML = "Result " + result;
 
