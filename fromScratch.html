@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability Lab</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/myStyles.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<h1 id="top">Probability Lab: Monty Hall Simulation</h1>
+
+<a href="index.html">Go Home</a> |
+<a href="about.html">Go to Probability App</a>
+
+<br><br>
+
+<!-- INTRO SECTION -->
+<div class="section">
+    <h2>About This Page</h2>
+    <p>
+        This page demonstrates HTML, CSS, JavaScript, and simulation techniques
+        used in probability. It includes interactive models
+        and embedded media.
+    </p>
+</div>
+
+<hr>
+
+<!-- LIST REQUIREMENT -->
+<div class="section">
+    <h2>Key Probability Concepts</h2>
+
+    <ol>
+        <li>
+            Conditional Probability  
+            <ul>
+                <li>Finding the probability of something happening when we already know new information.</li>
+                <li>Example: Updating chances after one door is revealed in the Monty Hall problem.</li>
+            </ul>
+        </li>
+
+        <li>
+            Simulation Methods  
+            <ul>
+                <li>Using repeated random trials (like running a game many times) to estimate probabilities.</li>
+                <li>Example: Running the Monty Hall game 1,000 times to see which strategy wins more.</li>
+            </ul>
+        </li>
+
+        <li>
+            Expected Value  
+            <ul>
+                <li>The average outcome you would expect if you repeated a random experiment many times.</li>
+                <li>Example: On average, switching doors wins about 2 out of 3 times.</li>
+            </ul>
+        </li>
+
+        <li>
+            Random Processes  
+            <ul>
+                <li>Events where outcomes happen unpredictably but still follow probability rules.</li>
+                <li>Example: Coin flips, dice rolls, or randomly choosing doors.</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<hr>
+
+<!-- TABLEAU -->
+<div class="section">
+    <h2>Data Visualization (Tableau)</h2>
+
+    <p>
+        This interactive Tableau visualization shows probability in sports as playoff-related data.
+        Users can hover over the visualization and interact with the filters
+        to explore patterns and relationships within the dataset.
+</p>
+
+    <div class="tableauPlaceholder">
+        <div class='tableauPlaceholder' id='viz1776493295493' style='position: relative'><noscript><a href='#'><img alt='Playoff ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;BT&#47;BT5WXXJBQ&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;BT5WXXJBQ' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;BT&#47;BT5WXXJBQ&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1776493295493');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='877px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='877px';} else { vizElement.style.width='100%';vizElement.style.height='794px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>         
+    </div>
+</div>
+
+<hr>
+
+
+<!-- EXTRA MINI TOOL (OPTIONAL BUT HELPS GRADE) -->
+<div class="section">
+    <h2>Coin Flip Simulator</h2>
+
+    <img id="coinImage" src ="/assets/img/heads.png" width="150" alt="Coin Image">
+
+    <p id="coinText">Click flip to start!</p>
+
+    <p>
+        Heads: <span id="headsCount">0</span>
+        Tails: <span id="tailsCount">0</span>
+        Total Flips: <span id =totalCount>0</span>
+    </p>
+
+    <p>
+        Probability of Heads <span id="probHeads">0</span>
+    </p>
+    <button onclick="flipCoin()">Flip Coin</button>
+    <button onclick="resetCoin()">Reset</button>
+</div>
+
+<hr>
+
+<div class="section">
+    <h2>What is the Monty Hall Problem?</h2>
+    <p>
+        The Monty Hall Problem is a probability puzzle based on a game show scenario.
+        There are three doors: behind one is a car (the prize), and behind the other two are goats.
+    </p>
+
+    <p>
+        You first pick one door. Then the host, who knows what is behind each door,
+        opens one of the remaining doors to reveal a goat. You are then given a choice:
+        stay with your original door or switch to the other unopened door.
+    </p>
+
+    <p> The surprising result is that switching doors gives you a higher chance of winning
+        (about 2/3) compared to staying (about 1/3). This goes against most people's intuition
+        and is a classic example of conditional probability.
+    </p>
+</div>
+
+<hr>
+
+<!-- IMAGE -->
+<div class="section">
+    <h2>Monty Hall Visualization</h2>
+
+    <img src="/assets/img/monty.jpg" alt="Monty Hall doors" width="400">
+</div>
+
+<hr>
+
+<!-- YOUTUBE VIDEO -->
+<div class="section">
+    <h2>Explanation Video</h2>
+
+    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/4Lb-6rxZxx0"
+    title="YouTube video player"
+    frameborder="0"
+    allowfullscreen>
+    </iframe>
+</div>
+
+<hr>
+
+
+<!-- MONTY HALL GAME -->
+<div class="section">
+    <h2>Monty Hall Simulation</h2>
+
+    <p> Choose a strategy below to simulate the Monty Hall problem.
+        The counters track how often each strategy wins or loses.
+    </p>
+
+    <button onclick="playStay()">Stay</button>
+    <button onclick="playSwitch()">Switch</button>
+    <button onclick="resetMonty()">Reset</button>
+
+    <p id="result">Click a strategy to play.</p>
+
+    <hr>
+
+    <h3> Results Tracking</h3>
+
+    <p>
+        <strong>Stay Strategy:</strong><br>
+        Wins: <span id="stayWins">0</span> |
+        Losses: <span id="stayLosses">0</span> |
+        Win Rate: <span id="stayRate">0</span>
+    </p>
+
+    <p>
+        <strong>Switch Strategy:</strong><br>
+        Wins: <span id="switchWins">0</span> |
+        Losses: <span id="switchLosses">0</span> |
+        Win Rate: <span id="switchRate">0</span>
+    </p>
+
+</div>
+
+<hr>
+
+
+
+<!-- NAVIGATION BACK -->
+<div class="section">
+    <a href="#top">Go to Top</a>
+    <br>
+    <!-- <a href="index.html">Back to Home</a> -->
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+let stayWins = 0;
+let stayLosses = 0;
+
+let switchWins = 0;
+let switchLosses = 0;
+
+function playStay() {
+    let win = Math.random() < 0.33;
+
+    if (win){
+        stayWins++;
+        document.getElementById("result").innerHTML =
+            "You stayed and WON!";
+    }
+    else {
+        stayLosses++;
+        document.getElementById("result").innerHTML = 
+        "You stayed and lost.";
+    }
+
+    updateMontyStats();
+    
+}
+
+function playSwitch() {
+    let win = Math.random() < 0.66;
+
+    if (win) {
+        switchWins++;
+        document.getElementById("result").innerHTML =
+            "You switched and WON!";
+    }
+    else {
+        switchLosses++;
+        document.getElementById("result").innerHTML =
+            "You switched and lost.";
+    }
+    
+    updateMontyStats();
+}
+
+// UPDATE DISPLAY
+function updateMontyStats() {
+
+    let stayTotal = stayWins + stayLosses;
+    let switchTotal = switchWins + switchLosses;
+
+    let stayRate = 0;
+    let switchRate = 0;
+
+    if (stayTotal > 0) {
+        stayRate = (stayWins / stayTotal).toFixed(3);
+    }
+
+    if (switchTotal > 0) {
+        switchRate = (switchWins / switchTotal).toFixed(3);
+    }
+
+    document.getElementById("stayWins").innerHTML = stayWins;
+    document.getElementById("stayLosses").innerHTML = stayLosses;
+    document.getElementById("stayRate").innerHTML = stayRate;
+
+    document.getElementById("switchWins").innerHTML = switchWins;
+    document.getElementById("switchLosses").innerHTML = switchLosses;
+    document.getElementById("switchRate").innerHTML = switchRate;
+
+}
+
+
+// RESET FUNCTION
+function resetMonty() {
+
+    stayWins = 0;
+    stayLosses = 0;
+
+    switchWins = 0;
+    switchLosses = 0;
+
+    updateMontyStats();
+
+    document.getElementById("result").innerHTML =
+        "Click a strategy to play.";
+
+}
+
+let heads = 0;
+let tails = 0;
+let total = 0;
+function flipCoin() {
+    let result = Math.random() < 0.5 ? "Heads" : "Tails";
+    total++;
+    if (result === "Heads") {
+        heads++;
+        document.getElementById("coinImage").src = "/assets/img/heads.png";
+    } else{
+        tails++;
+        document.getElementById("coinImage").src = "/assets/img/tails.png";
+    }
+    document.getElementById("coinText").innerHTML = "Result " + result;
+
+    document.getElementById("headsCount").innerHTML = heads;
+    document.getElementById("tailsCount").innerHTML = tails;
+    document.getElementById("totalCount").innerHTML = total;
+
+    let prob = (heads / total).toFixed(3);
+    document.getElementById("probHeads").innerHTML = prob;
+}
+
+function resetCoin() {
+    heads = 0;
+    tails = 0;
+    total = 0;
+
+    document.getElementById("headsCount").innerHTML = 0;
+    document.getElementById("tailsCount").innerHTML = 0;
+    document.getElementById("totalCount").innerHTML = 0;
+    document.getElementById("probHeads").innerHTML = 0;
+
+
+    document.getElementById("coinText").innerHTML = "Click flip to start!";
+    document.getElementById("coinImage").src = "/assets/img/heads.png";
+}
+
+</script>
+
+</body>
+</html>

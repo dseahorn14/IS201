@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mortality Analysis</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="fromScratch.html">Probability Lab</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/sil.jpg')">
+            <div class="container position-relative px- px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>How Have Life Expectancy Rates Changed? </h1>
+                            <h2 class="subheading">Diving into the differences in life expectancy within different income groups.</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Dallin Seahorn</a>
+                                on April 16, 2026
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>When people ask me what I’m studying, my go to line is to say “I’m studying to be like the little jaguar off of Zootopia, an actuary.” Oftentimes, people don’t actually know what an actuary does, and that movie scene is their only reference point. I then explain that actuarial work is much more about understanding data, risk, and long term financial outcomes than hunting around an office. </p>
+                        <p>One of the biggest responsibilities that actuaries have is predicting how long people will live. Life insurance, pension plans, and even governments depend on these forecasts to make sure they have sufficient money to pay beneficiaries benefits far into the future. Because of this, actuaries study trends in life expectancy relatively closely, then creating models to help analyze the risk. For my project, I wanted to explore a question that reflects this core part of actuarial science: How have life expectancy trends changed across global income groups since 1990?</p>
+                        <p>1990 may be a random year to start with, but with the given dataset from the World Bank’s World Development Indicators (WDI) API, it made sense. The year 1990 is the first year when all five global income groups have consistent life expectancy data, as well as for many countries this was the first year they started to report that information. The WDI collects data from official national sources such as statistical agencies, central banks, international organizations, and through its own country economists and surveys. They compile, clean, and standardize the data into categories which can then be viewed to find a variety of themes such as poverty, health, economy, and environment trends for countries all over the world. Their API provides a simple way for researchers to request the variables they need without having to download huge spreadsheets of data. </p>
+                        <img class="img-fluid" src="assets/img/life.jpg" alt="..." />
+                        <span class="caption text-muted">Graph depicting Life Expectancy Trends by Income Group over the last 30 years.</span>
+                        <p>To answer my question, I used the WDI API to pull annual life expectancy at birth values for each income group (High, Upper Middle, Lower Middle, Low, and Not Classified). The WDI API package in R allowed me to pull the information that I wanted from the data source specifically. Not knowing how the API worked, I did a quick google search to find the documentation to learn how I can retrieve the data I desire. Using the indicator “SP.DYN.LE00.IN”, I was able to find data for each year that included life expectancy and income group. After repeated attempts to work on the project, the API would suddenly be down at times, so I created a csv based on the data given by the API. After cleaning and the data by income group, I created a graph to show the trends of each group over the years.</p>
+                        <p>The graph showed that life expectancy at birth has increased over time for all groups as we learn and discover more technology. The growth rates seem pretty similar amongst all the groups as they are all nearly parallel with each other, excluding the “Not Classified” group due to unknown variabilities. There is a dip around 2020 indicating that during covid, life expectancy rates at birth dipped, but quickly recovered thereafter. </p>
+                        <p>Overall this project shows that while life expectancy has increased for all global income groups, meaningful differences between groups still persist. Even though the trends move in similar directions, the consistent gaps highlight why actuaries cannot rely on a single mortality assumption for all populations. </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/dallin-seahorn-251a02314">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/dallin.seahorn/">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/dseahorn14">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Dallin Seahorn 2026</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
